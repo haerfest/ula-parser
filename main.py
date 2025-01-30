@@ -69,7 +69,7 @@ class Ula:
     gap_vertical         = 32.5
     gap_horizontal       = 17
     group_gap_vertical   = 212
-    group_gap_horizontal = 218
+    group_gap_horizontal = 216
 
     def __init__(self):
         self.cells = []
@@ -83,8 +83,13 @@ class Ula:
                         self.cells.append(Cell(Point(int(x), int(y))))
                         x += Cell.width + Ula.gap_horizontal
                     x += Ula.group_gap_horizontal
+                    y -= 2.5  # perspective
                 y += Cell.height + Ula.gap_vertical
+                y += 2.5 * 4  # perspective
+                x += 2
             y += Ula.group_gap_vertical
+            x -= 6  # perspective
+            y += 2.5  # perspective
 
     def draw(self, image):
         for cell in self.cells:
