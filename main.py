@@ -65,11 +65,11 @@ class Cell:
 class Ula:
     width                = 10106
     height               = 9194
-    top_left_cell        = Point(922, 915)
-    gap_vertical         = 32.5
-    gap_horizontal       = 17
-    group_gap_vertical   = 212
-    group_gap_horizontal = 215.5
+    top_left_cell        = Point(920, 915)
+    gap_vertical         = 33
+    gap_horizontal       = 17.5
+    group_gap_vertical   = 208
+    group_gap_horizontal = 211
 
     def __init__(self):
         self.cells = []
@@ -78,19 +78,13 @@ class Ula:
         for row_group in range(3):
             for row in range(11):
                 x = Ula.top_left_cell.x
-                x -= row_group * 2  # perspective
                 for column_group in range(4):
                     for column in range(9):
                         self.cells.append(Cell(Point(int(x), int(y))))
                         x += Cell.width + Ula.gap_horizontal
                     x += Ula.group_gap_horizontal
-                    y -= 2.5  # perspective
                 y += Cell.height + Ula.gap_vertical
-                y += 2.5 * 4  # perspective
             y += Ula.group_gap_vertical
-            y += 2.5  # perspective
-            Ula.gap_horizontal += 0.5  # perspective
-            Ula.group_gap_horizontal -= 4  # perspective
 
     def draw(self, image):
         for cell in self.cells:
