@@ -1,0 +1,1 @@
+The `ula.jpg` referred to can be downloaded from [this stardot.org.uk post](https://www.stardot.org.uk/forums/viewtopic.php?p=196044#p196044). It's a 50 Mb JPEG image.
